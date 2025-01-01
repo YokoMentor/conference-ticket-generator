@@ -8,6 +8,9 @@ export default {
       lg: "976px",
       xl: "1440px",
     },
+    fontFamily: {
+      sans: ["Inconsolata", "serif"],
+    },
     extend: {},
   },
   plugins: [],
