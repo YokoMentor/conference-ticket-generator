@@ -8,10 +8,29 @@ export default {
       lg: "976px",
       xl: "1440px",
     },
+    colors: {
+      bg: "hsl(240, 78%, 98%)",
+      "toggle-label": "hsl(234, 14%, 74%)",
+    },
     fontFamily: {
       sans: ["Inconsolata", "serif"],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "bg-mobile":
+          "url('./images/pattern-circle.svg'),url('./images/pattern-lines.svg'),url('./images/pattern-squiggly-line-bottom.svg'),url('./images/pattern-squiggly-line-top.svg'),url('./images/background-mobile.png')",
+        "bg-desktop":
+          "url('./images/pattern-circle.svg'),url('./images/pattern-lines.svg'),url('./images/pattern-squiggly-line-bottom.svg'),url('./images/pattern-squiggly-line-top.svg'),url('./images/background-desktop.png')",
+        "bg-tablet":
+          "url('./images/pattern-circle.svg'),url('./images/pattern-lines.svg'),url('./images/pattern-squiggly-line-bottom.svg'),url('./images/pattern-squiggly-line-top.svg'),url('./images/background-tablet.png')",
+      },
+      backgroundPosition: {
+        "bg-mobile": "right, top, left bottom, right top",
+      },
+      backgroundSize: {
+        "bg-mobile": "100px, 1000px, 300px, 100px, 100%",
+      },
+    },
   },
   plugins: [],
 };
