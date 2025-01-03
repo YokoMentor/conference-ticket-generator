@@ -25,10 +25,10 @@ export default {
           "url('./images/pattern-circle.svg'),url('./images/pattern-lines.svg'),url('./images/pattern-squiggly-line-bottom.svg'),url('./images/pattern-squiggly-line-top.svg'),url('./images/background-tablet.png')",
       },
       backgroundPosition: {
-        "bg-mobile": "right, top, left bottom, right top",
+        "bg-mobile": "right, top, left bottom, right top 25px",
       },
       backgroundSize: {
-        "bg-mobile": "100px, 1000px, 300px, 100px, 100%",
+        "bg-mobile": "100px, 1000px, 300px, 110px, 100%",
       },
     },
   },
