@@ -9,8 +9,8 @@ export default {
       xl: "1440px",
     },
     colors: {
-      bg: "hsl(240, 78%, 98%)",
-      "toggle-label": "hsl(234, 14%, 74%)",
+      heading: "hsl(0, 0%, 100%)",
+      paragraph: "hsl(252, 6%, 83%)",
     },
     fontFamily: {
       sans: ["Inconsolata", "serif"],
