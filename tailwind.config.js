@@ -11,6 +11,8 @@ export default {
     colors: {
       heading: "hsl(0, 0%, 100%)",
       paragraph: "hsl(252, 6%, 83%)",
+      "bg-box": "hsl(245, 19%, 35%)",
+      "border-box": "hsl(245, 15%, 58%)",
     },
     fontFamily: {
       sans: ["Inconsolata", "serif"],
