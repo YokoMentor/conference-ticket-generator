@@ -30,9 +30,11 @@ export default {
       },
       backgroundPosition: {
         "bg-mobile": "right, top, left bottom, right top 25px",
+        "bg-desktop": "right, top, left bottom, right top 90px",
       },
       backgroundSize: {
         "bg-mobile": "100px, 1000px, 300px, 110px, 100%",
+        "bg-desktop": "220px, 1400px, 650px, 400px, 100%",
       },
     },
   },

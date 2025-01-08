@@ -7,7 +7,7 @@ import iconInfo from './images/icon-info.svg'
 function App() {
 
   return (
-    <div className='flex flex-col min-h-screen justify-center items-center  bg-bg-mobile bg-no-repeat text-[60px] text-red-500'>
+    <div className='flex flex-col min-h-screen justify-center items-center bg-bg-mobile md:bg-bg-desktop bg-no-repeat text-[60px] text-red-500'>
       <div className='flex flex-col justify-center items-center text-center w-[344px] md:w-[786px] mb-9 md:mb-12 mt-7 md:mt-10'>
         <img src={logoFull} alt="logo" className="w-[166px] h-[24px] md:w-[209px] md:h-[30px] mb-10 md:mb-[62px]"></img>
         <h1 className='text-heading text-[28px] md:text-[58px] font-bold leading-[2rem] md:leading-[4rem] mb-6'>Your Journey to Coding Conf 2025 Starts Here!</h1>
