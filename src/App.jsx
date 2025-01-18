@@ -6,6 +6,9 @@ import iconInfo from './images/icon-info.svg'
 
 function App() {
 
+  const borderStyleRegular = 'w-full  h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid text-[18px] text-paragraph pl-4';
+  const borderStyleError = 'w-full  h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-error border-solid text-[18px] text-paragraph pl-4';
+
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
 
@@ -57,7 +60,7 @@ function App() {
           <input type="text" id="name" className='w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid'/>
           <label htmlFor="email" className='text-heading text-[19px] mb-2 mt-6'>Email Address</label>
           <input type="text" id="email" placeholder='example@email.com'
-            className='w-full  h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid text-[18px] text-paragraph pl-4' 
+            className={`${emailError ? borderStyleError : borderStyleRegular}`} 
             onChange={handleEmailChange}/>
             {emailError && <div className='flex items-center text-error text-[12px] mt-3'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/><path fill="#e16151" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/><path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg><p className='ml-2'>Please enter a valid email address.</p></div>}
           <label htmlFor="username" className='text-heading text-[19px] mb-2 mt-6'>GitHub Username</label>
