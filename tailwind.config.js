@@ -15,6 +15,7 @@ export default {
       "border-box": "hsl(245, 15%, 58%)",
       btn: "hsl(7, 88%, 67%)",
       "btn-txt": "hsl(248, 70%, 10%)",
+      error: "hsl(7, 71%, 60%)",
     },
     fontFamily: {
       sans: ["Inconsolata", "serif"],

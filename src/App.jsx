@@ -6,6 +6,31 @@ import iconInfo from './images/icon-info.svg'
 
 function App() {
 
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    setEmailError(false);
+    validateEmail(email);
+  }
+
+  function handleEmailChange(event){
+    event.preventDefault();
+    setEmail(event.target.value);
+  }
+
+  function validateEmail(value) {
+    if (value.length == 0 || !isEmailValid(value)) {
+      setEmailError(true);
+    }
+  }
+
+  function isEmailValid(email){
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email); 
+  }
+
   return (
     <div className='flex flex-col min-h-screen justify-center items-center bg-bg-mobile md:bg-bg-desktop bg-no-repeat text-[60px] text-red-500'>
       <div className='flex flex-col justify-center items-center text-center w-[344px] md:w-[786px] mb-9 md:mb-12 mt-7 md:mt-10'>
@@ -26,12 +51,15 @@ function App() {
           <p className='text-paragraph text-[12px]'>Upload your photo &#40;JPG or PNG, max size: 500KB&#41;.</p>
         </div>
       </div>
-      <form action="" className='mt-5'>
+      <form className='mt-5' onSubmit={handleSubmit}>
         <div className='flex flex-col w-[344px] md:w-[460px]'>
           <label htmlFor="name" className='text-heading text-[19px] mb-2'>Full Name</label>
           <input type="text" id="name" className='w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid'/>
           <label htmlFor="email" className='text-heading text-[19px] mb-2 mt-6'>Email Address</label>
-          <input type="email" id="email" placeholder='example@email.com' className='w-full  h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid text-[18px] text-paragraph pl-4'/>
+          <input type="text" id="email" placeholder='example@email.com'
+            className='w-full  h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid text-[18px] text-paragraph pl-4' 
+            onChange={handleEmailChange}/>
+            {emailError && <div className='flex text-error text-[16px]'><img src={iconInfo} alt="Email error" className='mr-2 fill-error'/><p>Please enter a valid email address.</p></div>}
           <label htmlFor="username" className='text-heading text-[19px] mb-2 mt-6'>GitHub Username</label>
           <input type="text" id="username" placeholder='@yourusername' className='w-full md:w-[460px] h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid text-[18px] text-paragraph pl-4'/>
           <input type="submit" value="Generate My Ticket" className='w-full h-[54px] rounded-xl bg-btn text-[20px] text-btn-txt font-extrabold mt-6 mb-28'/>
