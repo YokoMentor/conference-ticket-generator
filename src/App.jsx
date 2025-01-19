@@ -9,18 +9,42 @@ function App() {
   const borderStyleRegular = 'focus:outline-none focus:outline-border-box w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-bord-box border-solid text-[18px] text-paragraph pl-4';
   const borderStyleError = 'focus:outline-none focus:outline-error w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-error border-solid text-[18px] text-paragraph pl-4';
 
+  const [name, setName] = useState('');
+  const [nameError, setNameError] = useState(false);
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
+  const [username, setUsername] = useState('');
+  const [usernameError, setUsernameError] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
+    setNameError(false);
+    validateName(name);
     setEmailError(false);
     validateEmail(email);
+    setUsernameError(false);
+    validateUsername(username);
+  }
+
+  function handleNameChange(event){
+    event.preventDefault();
+    setName(event.target.value);
   }
 
   function handleEmailChange(event){
     event.preventDefault();
     setEmail(event.target.value);
+  }
+
+  function handleUsernameChange(event){
+    event.preventDefault();
+    setUsername(event.target.value);
+  }
+
+  function validateName(value) {
+    if (value.length == 0) {
+      setNameError(true);
+    }
   }
 
   function validateEmail(value) {
@@ -32,6 +56,12 @@ function App() {
   function isEmailValid(email){
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email); 
+  }
+
+    function validateUsername(value) {
+    if (value.length == 0) {
+      setUsernameError(true);
+    }
   }
 
   return (
@@ -57,14 +87,16 @@ function App() {
       <form className='mt-5' onSubmit={handleSubmit}>
         <div className='flex flex-col w-[344px] md:w-[460px]'>
           <label htmlFor="name" className='text-heading text-[19px] mb-2'>Full Name</label>
-          <input type="text" id="name" className='w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid'/>
+          <input type="text" id="name" className={`${nameError ? borderStyleError : borderStyleRegular}`} onChange={handleNameChange}/>
           <label htmlFor="email" className='text-heading text-[19px] mb-2 mt-6'>Email Address</label>
           <input type="text" id="email" placeholder='example@email.com'
             className={`${emailError ? borderStyleError : borderStyleRegular}`} 
             onChange={handleEmailChange}/>
             {emailError && <div className='flex items-center text-error text-[12px] mt-3'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/><path fill="#e16151" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/><path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg><p className='ml-2'>Please enter a valid email address.</p></div>}
           <label htmlFor="username" className='text-heading text-[19px] mb-2 mt-6'>GitHub Username</label>
-          <input type="text" id="username" placeholder='@yourusername' className='w-full md:w-[460px] h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid text-[18px] text-paragraph pl-4'/>
+          <input type="text" id="username" placeholder='@yourusername'
+            className={`${usernameError ? borderStyleError : borderStyleRegular}`}
+            onChange={handleUsernameChange}/>
           <input type="submit" value="Generate My Ticket" className='w-full h-[54px] rounded-xl bg-btn text-[20px] text-btn-txt font-extrabold mt-6 mb-28'/>
         </div>
       </form>
