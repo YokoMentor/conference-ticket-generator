@@ -6,8 +6,8 @@ import iconInfo from './images/icon-info.svg'
 
 function App() {
 
-  const borderStyleRegular = 'w-full  h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-border-box border-solid text-[18px] text-paragraph pl-4';
-  const borderStyleError = 'w-full  h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-error border-solid text-[18px] text-paragraph pl-4';
+  const borderStyleRegular = 'focus:outline-none focus:outline-border-box w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-bord-box border-solid text-[18px] text-paragraph pl-4';
+  const borderStyleError = 'focus:outline-none focus:outline-error w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-error border-solid text-[18px] text-paragraph pl-4';
 
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
