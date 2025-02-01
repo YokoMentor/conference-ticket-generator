@@ -137,8 +137,8 @@ function App() {
             </div>
           </form>
         </div>}
+        {isVisible && <CongratsPage/>}
       </div>
-      {isVisible && <CongratsPage/>}
     </div>
   )
 }
