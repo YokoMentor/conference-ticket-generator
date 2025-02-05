@@ -11,16 +11,16 @@ function CongratsPage(){
                 <h1 className='text-heading text-[28px] md:text-[58px] font-bold leading-[2rem] md:leading-[4rem] mb-6'>Congrats, Jonatan Kristof! Your ticket is ready.</h1>
                 <p className='text-paragraph text-[19px] md:text-[23px] leading-[1.5rem]'>We've emailed your ticket to jonatan@mail.com and will sned updates in the run up to the event.</p>
             </div>
-            <div className='bg-bg-ticket bg-no-repeat w-[344px] h-[164px]'>
-                <div className='mt-3 ml-4'>
-                    <div className='flex text-left mb-5'>
+            <div className='bg-bg-ticket bg-no-repeat w-[346px] h-[164px] flex justify-between mx-4'>
+                <div className='mt-3'>
+                    <div className='flex text-left mb-5 ml-4'>
                         <img src={logoMark} alt="logo mark" className='w-[30px] h-[30px] mr-3 mt-2' />
                         <div>
                             <h2 className='text-heading text-[22px] font-bold mb-1'>Coding Conf</h2>
                             <p className='text-paragraph text-[14px]'>Jan 31, 2025 / Austin, TX</p>
                         </div>
                     </div>
-                    <div className='flex text-left'>
+                    <div className='flex text-left ml-4'>
                         <img src={imageAvatar} alt="image avatar" className='w-[45px] h-[45px] mr-3 mt-2 rounded-lg' />
                         <div>
                             <h2 className='text-heading text-[18px] mt-2'>Jonatan Kristof</h2>
@@ -31,6 +31,7 @@ function CongratsPage(){
                         </div>
                     </div>
                 </div>
+                <div className='-rotate-90 w-[22px] h-[64px] text-paragraph text-[20px] mt-16'>60910#</div>
             </div>
         </div>
     )
