@@ -28,7 +28,8 @@ export default {
           "url('./images/pattern-circle.svg'),url('./images/pattern-lines.svg'),url('./images/pattern-squiggly-line-bottom.svg'),url('./images/pattern-squiggly-line-top.svg'),url('./images/background-desktop.png')",
         "bg-tablet":
           "url('./images/pattern-circle.svg'),url('./images/pattern-lines.svg'),url('./images/pattern-squiggly-line-bottom.svg'),url('./images/pattern-squiggly-line-top.svg'),url('./images/background-tablet.png')",
-        "bg-ticket": "url('./images/pattern-ticket.svg')",
+        "ticket-mobile": "url('./images/pattern-ticket.svg')",
+        "ticket-desktop": "url('./images/pattern-ticket.svg')",
       },
       backgroundPosition: {
         "bg-mobile": "right, top, left bottom, right top 25px, center",
@@ -38,7 +39,8 @@ export default {
       backgroundSize: {
         "bg-mobile": "100px, 1000px, 300px, 110px, 100%",
         "bg-desktop": "220px, 1400px, 650px, 400px, 100%",
-        "bg-ticket": "344px",
+        "ticket-mobile": "344px",
+        "ticket-desktop": "600px",
       },
     },
   },
