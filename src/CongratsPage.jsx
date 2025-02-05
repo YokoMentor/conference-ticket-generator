@@ -7,9 +7,9 @@ import iconGitHub from './images/icon-github.svg'
 function CongratsPage(){
     return (
         <div className='flex flex-col justify-center items-center text-center w-[344px] md:w-[786px] mb-9 md:mb-12'>
-            <div className='mb-[70px]'>
-                <h1 className='text-heading text-[28px] md:text-[58px] font-bold leading-[2rem] md:leading-[4rem] mb-6'>Congrats, Jonatan Kristof! Your ticket is ready.</h1>
-                <p className='text-paragraph text-[19px] md:text-[23px] leading-[1.5rem]'>We've emailed your ticket to jonatan@mail.com and will sned updates in the run up to the event.</p>
+            <div className='flex flex-col items-center mb-[70px]'>
+                <h1 className='text-heading text-[28px] md:text-[58px] font-bold leading-[2rem] md:leading-[4rem] mb-6 md:mb-8'>Congrats, Jonatan Kristof! Your ticket is ready.</h1>
+                <p className='text-paragraph text-[19px] md:text-[23px] leading-[1.5rem] md:leading-[1.8rem] md:w-[488px]'>We've emailed your ticket to jonatan@email.com and will send updates in the run up to the event.</p>
             </div>
             <div className='bg-bg-ticket bg-no-repeat w-[346px] h-[164px] flex justify-between mx-4'>
                 <div className='mt-3'>
