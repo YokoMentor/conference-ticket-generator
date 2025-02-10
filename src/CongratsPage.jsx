@@ -8,8 +8,8 @@ function CongratsPage(){
     return (
         <div className='flex flex-col justify-center items-center text-center w-[344px] md:w-[786px] mb-9 md:mb-12'>
             <div className='flex flex-col items-center mb-[70px] md:mb-[110px]'>
-                <h1 className='text-heading text-[28px] md:text-[58px] font-bold leading-[2rem] md:leading-[4rem] mb-6 md:mb-8'>Congrats, <span>Jonatan Kristof</span>! Your ticket is ready.</h1>
-                <p className='text-paragraph text-[19px] md:text-[23px] leading-[1.5rem] md:leading-[1.8rem] md:w-[488px]'>We've emailed your ticket to <span className='text-btn'>jonatan@email.com</span> and will send updates in the run up to the event.</p>
+                <h1 className='text-heading text-[28px] md:text-[58px] font-bold leading-[2rem] md:leading-[4rem] mb-6 md:mb-8'>Congrats, <span className='text-highlight'>Jonatan Kristof</span>! Your ticket is ready.</h1>
+                <p className='text-paragraph text-[19px] md:text-[23px] leading-[1.5rem] md:leading-[1.8rem] md:w-[488px]'>We've emailed your ticket to <span className='text-highlight'>jonatan@email.com</span> and will send updates in the run up to the event.</p>
             </div>
             <div className='bg-ticket-mobile md:bg-ticket-desktop bg-no-repeat w-[346px] h-[164px] md:w-[600px] md:h-[280px] flex justify-between mx-4 mb-60'>
                 <div className='mt-3 md:mt-4'>

@@ -13,7 +13,7 @@ export default {
       paragraph: "hsl(252, 6%, 83%)",
       "bg-box": "hsl(245, 19%, 35%)",
       "border-box": "hsl(245, 15%, 58%)",
-      btn: "hsl(7, 88%, 67%)",
+      highlight: "hsl(7, 88%, 67%)",
       "btn-txt": "hsl(248, 70%, 10%)",
       error: "hsl(7, 71%, 60%)",
     },

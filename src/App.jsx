@@ -7,8 +7,8 @@ import CongratsPage from './CongratsPage'
 
 function App() {
 
-  const borderStyleRegular = 'focus:outline-none focus:outline-border-box w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-bord-box border-solid text-[18px] text-paragraph pl-4';
-  const borderStyleError = 'focus:outline-none focus:outline-error w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-error border-solid text-[18px] text-paragraph pl-4';
+  const borderStyleRegular = 'focus:outline-none focus:outline-border-box w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-bord-box border-solid text-[18px] text-paragraph pl-4 cursor-pointer';
+  const borderStyleError = 'focus:outline-none focus:outline-error w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 border-[1px] border-error border-solid text-[18px] text-paragraph pl-4 cursor-pointer';
 
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState(false);
@@ -84,7 +84,7 @@ function App() {
           </div>
           <div className='flex flex-col justify-center w-[344px] md:w-[460px]'>
             <h2 className='text-heading text-[19px] text-left mb-2.5'>Upload Avatar</h2>
-            <div className='flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 w-full h-[126px] border-[1px] border-border-box border-dashed mb-3'>
+            <div className='flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 w-full h-[126px] border-[1px] border-border-box border-dashed mb-3 cursor-pointer'>
               <div className='flex justify-center items-center rounded-lg bg-bg-box w-[50px] h-[50px] border-border-box bg-opacity-25 border-[1px] mb-4 mt-1'>
                 <img src={iconUpload} alt="upload" className='w-[29px] h-[29px]'/>
               </div>
@@ -100,7 +100,7 @@ function App() {
               <label htmlFor="name" className='text-heading text-[19px] mb-2'>Full Name</label>
               <input type="text" id="name" 
                 className={`${nameError ? borderStyleError : borderStyleRegular}`} 
-                onChange={handleNameChange}/>
+                onChange={handleNameChange} />
                 {nameError && 
                 <div className='flex items-center text-error text-[12px] mt-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -133,7 +133,7 @@ function App() {
                   <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
                   <p className='ml-2'>Please enter a GitHub username.</p>
                 </div>}
-              <button className='w-full h-[54px] rounded-xl bg-btn text-[20px] text-btn-txt font-extrabold mt-6 mb-28' onClick={handleGenerateTicket}>Generate My Ticket</button>
+              <button className='w-full h-[54px] rounded-xl bg-highlight text-[20px] text-btn-txt font-extrabold mt-6 mb-28' onClick={handleGenerateTicket}>Generate My Ticket</button>
             </div>
           </form>
         </div>}
