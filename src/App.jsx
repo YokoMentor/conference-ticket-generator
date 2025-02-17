@@ -49,10 +49,24 @@ function App() {
     }
   }
 
+  function isValidName(value) {
+    if (value.length == 0) {
+      return false;
+    }
+    return true;
+  }
+
   function validateEmail(value) {
     if (value.length == 0 || !isEmailValid(value)) {
       setEmailError(true);
     }
+  }
+
+  function isValidEmail(value){
+    if (value.length == 0 || !isEmailValid(value)) {
+      return false;
+    }
+    return true;
   }
 
   function isEmailValid(email){
@@ -66,9 +80,24 @@ function App() {
     }
   }
 
+  function isValidUsername(value){
+    if (value.length == 0) {
+      return false;
+    }
+    return true;
+  }
+
   function handleGenerateTicket(event) {
     event.preventDefault();
-    setIsVisible(true);
+    setNameError(false);
+    validateName(name);
+    setEmailError(false);
+    validateEmail(email);
+    setUsernameError(false);
+    validateUsername(username);
+    if (isValidName(name) && isValidEmail(email) && isValidUsername(username)) {
+      setIsVisible(true);
+    }
   }
 
   return (
