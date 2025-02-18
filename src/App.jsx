@@ -166,7 +166,7 @@ function App() {
             </div>
           </form>
         </div>}
-        {isVisible && <CongratsPage/>}
+        {isVisible && <CongratsPage name = {name} email = {email} username = {username}/>}
       </div>
     </div>
   )
