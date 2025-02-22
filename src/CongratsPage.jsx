@@ -4,7 +4,7 @@ import logoMark from './images/logo-mark.svg'
 import imageAvatar from './images/image-avatar.jpg'
 import iconGitHub from './images/icon-github.svg'
 
-function CongratsPage({name, email, username}){
+function CongratsPage({name, email, username, avatar}){
     return (
         <div className='flex flex-col justify-center items-center text-center w-[344px] md:w-[786px] mb-9 md:mb-12'>
             <div className='flex flex-col items-center mb-[70px] md:mb-[110px]'>
@@ -21,7 +21,7 @@ function CongratsPage({name, email, username}){
                         </div>
                     </div>
                     <div className='flex text-left ml-4 md:ml-6'>
-                        <img src={imageAvatar} alt="image avatar" className='w-[45px] h-[45px] md:w-[80px] md:h-[80px] mr-3 md:mr-5 mt-2 rounded-lg' />
+                        <img src={avatar} alt="image avatar" className='w-[45px] h-[45px] md:w-[80px] md:h-[80px] mr-3 md:mr-5 mt-2 rounded-lg' />
                         <div>
                             <h2 className='text-heading text-[18px] md:text-[28px] mt-2 md:mt-4'>{name}</h2>
                             <div className='flex items-center'>

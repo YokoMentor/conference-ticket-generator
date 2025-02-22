@@ -17,6 +17,7 @@ function App() {
   const [username, setUsername] = useState('');
   const [usernameError, setUsernameError] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [avatar, setAvatar] = useState(0);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -100,6 +101,26 @@ function App() {
     }
   }
 
+  function onDropImage(event){
+    console.log(event.dataTransfer.files);
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    if (file.size > 500){
+      console.log("testing error");
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      setAvatar(e.target.result);
+      console.log(e.target.result);
+    }
+    reader.readAsDataURL(file);
+  }
+
+  function onDragImage(event){
+    console.log(event);
+    event.preventDefault();
+  }
+
   return (
     <div>
        <div className='flex flex-col min-h-screen justify-center items-center bg-bg-mobile md:bg-bg-desktop bg-no-repeat text-[60px] text-red-500'>
@@ -113,7 +134,7 @@ function App() {
           </div>
           <div className='flex flex-col justify-center w-[344px] md:w-[460px]'>
             <h2 className='text-heading text-[19px] text-left mb-2.5'>Upload Avatar</h2>
-            <div className='relative w-full h-[126px]'>
+            <div className='relative w-full h-[126px]' onDrop={onDropImage} onDrag={onDragImage}>
               <input type="file" id="myfile" name="myfile" className='absolute w-full h-full opacity-0'></input>
               <div className='flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 w-full h-[126px] border-[1px] border-border-box border-dashed mb-3 cursor-pointer'>
                 <div className='flex justify-center items-center rounded-lg bg-bg-box w-[50px] h-[50px] border-border-box bg-opacity-25 border-[1px] mb-4 mt-1'>
@@ -169,7 +190,7 @@ function App() {
             </div>
           </form>
         </div>}
-        {isVisible && <CongratsPage name = {name} email = {email} username = {username}/>}
+        {isVisible && <CongratsPage name = {name} email = {email} username = {username} avatar = {avatar}/>}
       </div>
     </div>
   )
