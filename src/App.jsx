@@ -7,7 +7,8 @@ import CongratsPage from './CongratsPage'
 
 function App() {
 
-  const avatarBoxStyle = 'focus:outline-none focus:outline-border-box flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 hover:bg-bg-box focus:bg-opacity-30 w-full h-[126px] border-[1px] border-border-box border-dashed mb-3 cursor-pointer'
+  const uploadAvatarStyle = 'flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 hover:bg-bg-box focus:bg-opacity-30 w-full h-[126px] border-[1px] border-border-box border-dashed mb-3'
+  const uploadAvatarStyleFocus = 'focus:outline-none focus:outline-border-box rounded-xl flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 hover:bg-bg-box focus:bg-opacity-30 w-full h-[126px] border-[1px] border-border-box border-dashed mb-3'
   const borderStyleRegular = 'focus:outline-none focus:outline-border-box w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 hover:bg-bg-box focus:bg-opacity-30 border-[1px] border-bord-box border-solid text-[18px] text-paragraph pl-4 cursor-pointer';
   const borderStyleError = 'focus:outline-none focus:outline-error w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 hover:bg-bg-box focus:bg-opacity-30 border-[1px] border-error border-solid text-[18px] text-paragraph pl-4 cursor-pointer';
 
@@ -22,6 +23,7 @@ function App() {
   const [avatarText, setAvatarText] = useState(true);
   const [avatarError, setAvatarError] = useState(false);
   const [avatarMissingError, setAvatarMissingError] = useState(false);
+  const [avatarFocused, setAvatarFocused] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -103,6 +105,10 @@ function App() {
     if (isValidName(name) && isValidEmail(email) && isValidUsername(username)) {
       setIsVisible(true);
     }
+    if (avatar == 0) {
+      setAvatarText(false);
+      setAvatarMissingError(true)
+    }
   }
 
   function onDropImage(event){
@@ -121,11 +127,6 @@ function App() {
     reader.readAsDataURL(file);
   }
 
-  function onDragImage(event){
-    console.log(event);
-    event.preventDefault();
-  }
-
   return (
     <div>
        <div className='flex flex-col min-h-screen justify-center items-center bg-bg-mobile md:bg-bg-desktop bg-no-repeat text-[60px] text-red-500'>
@@ -139,8 +140,8 @@ function App() {
           </div>
           <div className='flex flex-col justify-center w-[344px] md:w-[460px]'>
             <h2 className='text-heading text-[19px] text-left mb-2.5'>Upload Avatar</h2>
-            <div className='relative w-full h-[126px]' onDrop={onDropImage} onDrag={onDragImage}>
-              <div className={avatarBoxStyle}>
+            <div className='relative w-full h-[126px]' onDrop={onDropImage}>
+              <div className={`${avatarFocused ? uploadAvatarStyleFocus : uploadAvatarStyle}`}>
                 <div className='flex justify-center items-center rounded-lg bg-bg-box w-[50px] h-[50px] border-border-box bg-opacity-25 border-[1px] mb-4 mt-1'>
                   <img src={iconUpload} alt="upload" className='w-[29px] h-[29px]'/>
                 </div>
@@ -163,10 +164,13 @@ function App() {
                   <p className='ml-2'>File too large. Please upload a photo under 500KB.</p>
                 </div>}
             {avatarMissingError &&
-              <div className='flex mt-3'>
-                <img src={iconInfo} alt="info" className='w-[17px] h-[17px] mr-2'/>
-                <p className='text-error text-[12px]'>Upload your photo &#40;JPG or PNG, max size: 500KB&#41;.</p>
-              </div>}
+              <div className='flex items-center text-error text-[12px] mt-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                  <path fill="#e16151" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
+                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
+                  <p className='ml-2'>Upload your photo &#40;JPG or PNG, max size: 500KB&#41;.</p>
+                </div>}
           </div>
           <form className='mt-5' onSubmit={handleSubmit}>
             <div className='flex flex-col w-[344px] md:w-[460px]'>
