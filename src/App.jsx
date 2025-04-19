@@ -145,7 +145,7 @@ function App() {
                   <img src={iconUpload} alt="upload" className='w-[29px] h-[29px]'/>
                 </div>
                 <p className='text-paragraph text-[18px]'>Drag and drop or click to upload</p>
-                <input type="file" id="myfile" name="myfile" className='absolute w-full h-full opacity-0'></input>
+                <input type="file" id="myfile" name="myfile" className='absolute w-full h-full opacity-0 text-[0] cursor-pointer'></input>
               </div>
             </div>
             {avatarText &&
