@@ -18,6 +18,7 @@ function App() {
   const [usernameError, setUsernameError] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [avatar, setAvatar] = useState(0);
+  const [avatarText, setAvatarText] = useState(true);
   const [avatarError, setAvatarError] = useState(false);
 
   function handleSubmit(event) {
@@ -108,6 +109,7 @@ function App() {
     const file = event.dataTransfer.files[0];
     if (file.size > 500){
       setAvatarError(true);
+      setAvatarText(false)
     }
     const reader = new FileReader();
     reader.onload = function(e) {
@@ -144,10 +146,12 @@ function App() {
                 <p className='text-paragraph text-[18px]'>Drag and drop or click to upload</p>
               </div>
             </div>
-            <div className='flex mt-3'>
-              <img src={iconInfo} alt="info" className='w-[17px] h-[17px] mr-2'/>
-              <p className='text-paragraph text-[12px]'>Upload your photo &#40;JPG or PNG, max size: 500KB&#41;.</p>
-            </div>
+            {avatarText &&
+              <div className='flex mt-3'>
+                <img src={iconInfo} alt="info" className='w-[17px] h-[17px] mr-2'/>
+                <p className='text-paragraph text-[12px]'>Upload your photo &#40;JPG or PNG, max size: 500KB&#41;.</p>
+              </div>
+            }
             {avatarError && 
                 <div className='flex items-center text-error text-[12px] mt-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
