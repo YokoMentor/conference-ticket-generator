@@ -212,7 +212,7 @@ function App() {
                   <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
                   <p className='ml-2'>Please enter a GitHub username.</p>
                 </div>}
-              <button className='w-full h-[54px] rounded-xl bg-highlight text-[20px] text-btn-txt font-extrabold mt-6 mb-28' onClick={handleGenerateTicket}>Generate My Ticket</button>
+              <button className='focus:outline-none focus:outline-border-box w-full h-[54px] rounded-xl bg-highlight text-[20px] text-btn-txt font-extrabold mt-6 mb-28' onClick={handleGenerateTicket}>Generate My Ticket</button>
             </div>
           </form>
         </div>}
