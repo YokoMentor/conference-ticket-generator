@@ -170,7 +170,10 @@ function App() {
                 </div>
                   <div className='flex space-x-2 justify-center text-paragraph text-[12px] w-[200px]'>
                     <button className='w-[86px] h-[23px] bg-bg-box rounded-md bg-opacity-50 hover:underline' onClick={removeImage}>Remove image</button>
-                    <button className='w-[86px] h-[23px] bg-bg-box rounded-md bg-opacity-50 hover:underline'>Change image</button>
+                    <button className='flex items-center w-[86px] h-[23px] bg-bg-box rounded-md bg-opacity-50 hover:underline'>
+                      <input type="file" id="myfile" name="myfile" className='relative w-full h-full opacity-0 text-[0] cursor-pointer'></input>
+                      <p className='absolute ml-2'>Change image</p>
+                    </button>
                   </div>
               </div>
             </div>}
