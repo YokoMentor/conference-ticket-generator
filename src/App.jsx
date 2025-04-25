@@ -160,17 +160,17 @@ function App() {
             {avatarError && 
                 <div className='flex items-center text-error text-[12px] mt-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
                   <path fill="#e16151" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
                   <p className='ml-2'>File too large. Please upload a photo under 500KB.</p>
                 </div>}
             {avatarMissingError &&
               <div className='flex items-center text-error text-[12px] mt-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
                   <path fill="#e16151" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
                   <p className='ml-2'>Upload your photo &#40;JPG or PNG, max size: 500KB&#41;.</p>
                 </div>}
           </div>
@@ -183,9 +183,9 @@ function App() {
                 {nameError && 
                 <div className='flex items-center text-error text-[12px] mt-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
                   <path fill="#e16151" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
                   <p className='ml-2'>Please enter a full name.</p>
                 </div>}
               <label htmlFor="email" className='text-heading text-[19px] mb-2 mt-6'>Email Address</label>
@@ -195,9 +195,9 @@ function App() {
                 {emailError && 
                 <div className='flex items-center text-error text-[12px] mt-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
                   <path fill="#e16151" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
                   <p className='ml-2'>Please enter a valid email address.</p>
                 </div>}
               <label htmlFor="username" className='text-heading text-[19px] mb-2 mt-6'>GitHub Username</label>
@@ -207,9 +207,9 @@ function App() {
                 {usernameError && 
                 <div className='flex items-center text-error text-[12px] mt-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
                   <path fill="#e16151" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
-                  <path stroke="#e16151" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
+                  <path stroke="#e16151" strokeLinecap="round" strokeLinejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
                   <p className='ml-2'>Please enter a GitHub username.</p>
                 </div>}
               <button className='focus:outline-none focus:outline-border-box hover:bg-error hover:shadow-[0_2px_2px_rgba(251,133,118,1)] w-full h-[54px] rounded-xl bg-highlight text-[20px] text-btn-txt font-extrabold mt-6 mb-28' onClick={handleGenerateTicket}>Generate My Ticket</button>
