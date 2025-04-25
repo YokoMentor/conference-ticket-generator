@@ -135,6 +135,12 @@ function App() {
     reader.readAsDataURL(file);
   }
 
+  function removeImage(event){
+    event.preventDefault();
+    setAvatarBox(true);
+    setAvatarChange(false);
+  }
+
   return (
     <div>
        <div className='flex flex-col min-h-screen justify-center items-center bg-bg-mobile md:bg-bg-desktop bg-no-repeat text-[60px] text-red-500'>
@@ -163,7 +169,7 @@ function App() {
                   <img src={avatar} alt="avatar image" className='h-[60px] object-cover rounded-lg mt-2'/>
                 </div>
                   <div className='flex space-x-2 justify-center text-paragraph text-[12px] w-[200px]'>
-                    <button className='w-[86px] h-[23px] bg-bg-box rounded-md bg-opacity-50 hover:underline'>Remove image</button>
+                    <button className='w-[86px] h-[23px] bg-bg-box rounded-md bg-opacity-50 hover:underline' onClick={removeImage}>Remove image</button>
                     <button className='w-[86px] h-[23px] bg-bg-box rounded-md bg-opacity-50 hover:underline'>Change image</button>
                   </div>
               </div>
