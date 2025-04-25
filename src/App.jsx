@@ -9,6 +9,7 @@ function App() {
 
   const uploadAvatarStyle = 'flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 hover:bg-bg-box h-[126px] border-[1px] border-border-box border-dashed mb-3'
   const uploadAvatarStyleFocus = 'outline-none outline-border-box flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 h-[126px] border-[1px] border-border-box border-dashed mb-3'
+  const changeAvatarStyle = 'flex flex-col justify-center items-center rounded-lg bg-bg-box bg-opacity-30 h-[126px] border-[1px] border-border-box border-dashed mb-3'
   const borderStyleRegular = 'focus:outline-none focus:outline-border-box w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 hover:bg-bg-box focus:bg-opacity-30 border-[1px] border-bord-box border-solid text-[18px] text-paragraph pl-4 cursor-pointer';
   const borderStyleError = 'focus:outline-none focus:outline-error w-full h-[54px] rounded-xl bg-bg-box bg-opacity-30 hover:bg-bg-box focus:bg-opacity-30 border-[1px] border-error border-solid text-[18px] text-paragraph pl-4 cursor-pointer';
 
@@ -150,6 +151,17 @@ function App() {
                 </div>
                 <p className='text-paragraph text-[18px]'>Drag and drop or click to upload</p>
                 <input type="file" id="myfile" name="myfile" className='absolute w-full h-full opacity-0 text-[0] cursor-pointer'></input>
+              </div>
+            </div>
+            <div className='relative w-full h-[126px]'>
+              <div className={changeAvatarStyle}>
+                <div className='flex justify-center items-center rounded-lg bg-bg-box w-[50px] h-[50px] border-border-box bg-opacity-25 border-[1px] mb-4 mt-1 overflow-hidden'>
+                  <img src={avatar} alt="avatar image" className='h-[60px] object-cover rounded-lg mt-2'/>
+                </div>
+                  <div className='flex space-x-2 justify-center text-paragraph text-[12px] w-[200px]'>
+                    <button className='w-[86px] h-[23px] bg-bg-box rounded-md bg-opacity-50 hover:underline'>Remove image</button>
+                    <button className='w-[86px] h-[23px] bg-bg-box rounded-md bg-opacity-50 hover:underline'>Change image</button>
+                  </div>
               </div>
             </div>
             {avatarText &&
