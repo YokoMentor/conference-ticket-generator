@@ -118,9 +118,10 @@ function App() {
   function onDropImage(event){
     event.preventDefault();
     const file = event.dataTransfer.files[0];
-    if (file.size > 500){
+    if (file.size > 500*1000){
       setAvatarError(true);
-      setAvatarText(false)
+      setAvatarText(false);
+      return;
     }
     const reader = new FileReader();
     reader.onload = function(e) {
