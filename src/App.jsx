@@ -143,7 +143,7 @@ function App() {
 
   return (
     <div>
-       <div className='flex flex-col min-h-screen justify-center items-center bg-bg-mobile md:bg-bg-desktop bg-no-repeat text-[60px] text-red-500'>
+       <div className='flex flex-col min-h-screen justify-center items-center bg-bg-mobile md:bg-bg-desktop md:bg-auto bg-no-repeat text-[60px] text-red-500'>
         <div className='flex flex-col justify-center items-center text-center w-[344px] md:w-[786px] mt-7 md:mt-10'>
           <img src={logoFull} alt="logo" className="w-[166px] h-[24px] md:w-[209px] md:h-[30px] mb-10 md:mb-[70px]"></img>
         </div>
